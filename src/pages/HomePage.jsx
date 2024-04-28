@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useRef } from "react";
 import { FiSearch } from "react-icons/fi";
 import { assets } from "../assets/assets";
 import { JobCard } from "./JobListing";
 import { Link } from "react-router-dom";
-
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+gsap.registerPlugin(useGSAP);
 const categories = [
   {
     title: "Marketing & Communication",
@@ -141,13 +143,34 @@ const HomePage = () => {
 };
 
 const HeroSection = () => {
+  const container = useRef();
+  useGSAP(
+    () => {
+      gsap.from(".heading", {
+        x: -390,
+        duration: 1.4,
+        stagger: 0.3,
+        opacity: 0,
+      });
+      gsap.from(".para", {
+        x: 390,
+        duration: 1.4,
+        stagger: 0.3,
+        opacity: 0,
+      });
+    },
+    { scope: container }
+  );
   return (
-    <div className="H-container flex justify-center flex-col items-center pt-7 pb-9">
-      <h1 className="leading-snug text-center mb-5 font-semibold">
-        Get the <span className="text-purple-heart-700">Right Job</span> <br />
+    <div
+      ref={container}
+      className="H-container flex justify-center flex-col items-center pt-7 pb-9"
+    >
+      <h1 className="heading leading-snug text-center mb-5 font-semibold">
+        Get the <span className="text-purple-heart-800">Right Job</span> <br />
         You Deserve
       </h1>
-      <p className="">786 jobs & 110 candidates are registeresd</p>
+      <p className="para">786 jobs & 110 candidates are registeresd</p>
       <div className="flex items-center justify-between bg-purple-heart-100 rounded-full mt-8 w-2/6">
         <label className="flex items-center gap-3 px-3 py-2 flex-grow">
           <FiSearch className="text-purple-800 text-2xl" />
@@ -192,7 +215,7 @@ const JobCategory = () => {
     <div className="job-container bg-haiti-950 py-7 px-3">
       <h2 className="text-center">
         One Platform <br /> Many{" "}
-        <span className="text-purple-heart-700 font-medium">Solutions</span>
+        <span className="text-purple-heart-800 font-medium">Solutions</span>
       </h2>
       <div className="container transition-all sm:gap-8 sm:px-5 py-6">
         {categories.map((category, index) => (

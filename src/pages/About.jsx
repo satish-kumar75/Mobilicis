@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { assets } from "../assets/assets";
+import Cursor from "../components/Cursor";
 
 const About = () => {
   const [selectedPlace, setSelectedPlace] = useState("Tokyo");
@@ -18,14 +19,26 @@ const About = () => {
   };
 
   const cuisines = {
-    Sushi:
-      "Sushi is a beloved Japanese dish consisting of bite-sized pieces of vinegared rice topped with fresh fish or other ingredients. Originating in ancient Japan, sushi has evolved into a culinary art form with various styles and preparations. Whether you prefer nigiri, maki, or sashimi, sushi offers a delightful combination of flavors and textures that tantalize the taste buds.",
-    Ramen:
-      "Ramen is a comforting noodle soup that has captured the hearts and taste buds of people worldwide. Made with wheat noodles served in a flavorful broth, ramen comes in endless regional variations, each boasting its own unique broth, toppings, and noodle texture. From rich and creamy tonkotsu ramen to tangy and spicy miso ramen, there's a ramen style to satisfy every craving.",
-    Okonomiyaki:
-      "Okonomiyaki, often referred to as 'Japanese savory pancakes,' is a popular street food dish originating from Osaka. This savory pancake is made from a batter of flour, eggs, shredded cabbage, and various ingredients such as pork belly, seafood, or vegetables. Cooked on a griddle and topped with savory sauces, bonito flakes, and seaweed flakes, okonomiyaki offers a satisfying combination of flavors and textures.",
-    Sashimi:
-      "Sashimi is a traditional Japanese dish consisting of thinly sliced raw fish or seafood served without rice. Known for its simplicity and purity, sashimi highlights the natural flavors and textures of the freshest ingredients. From delicate slices of tuna and salmon to exotic varieties like sea urchin and octopus, sashimi offers a culinary experience that celebrates the ocean's bounty.",
+    Sushi: {
+      description:
+        "Sushi is a beloved Japanese dish consisting of bite-sized pieces of vinegared rice topped with fresh fish or other ingredients. Originating in ancient Japan, sushi has evolved into a culinary art form with various styles and preparations. Whether you prefer nigiri, maki, or sashimi, sushi offers a delightful combination of flavors and textures that tantalize the taste buds.",
+      image: assets.sushi,
+    },
+    Ramen: {
+      description:
+        "Ramen is a comforting noodle soup that has captured the hearts and taste buds of people worldwide. Made with wheat noodles served in a flavorful broth, ramen comes in endless regional variations, each boasting its own unique broth, toppings, and noodle texture. From rich and creamy tonkotsu ramen to tangy and spicy miso ramen, there's a ramen style to satisfy every craving.",
+      image: assets.ramen,
+    },
+    Okonomiyaki: {
+      description:
+        "Okonomiyaki, often referred to as 'Japanese savory pancakes,' is a popular street food dish originating from Osaka. This savory pancake is made from a batter of flour, eggs, shredded cabbage, and various ingredients such as pork belly, seafood, or vegetables. Cooked on a griddle and topped with savory sauces, bonito flakes, and seaweed flakes, okonomiyaki offers a satisfying combination of flavors and textures.",
+      image: assets.okonomiyaki,
+    },
+    Sashimi: {
+      description:
+        "Sashimi is a traditional Japanese dish consisting of thinly sliced raw fish or seafood served without rice. Known for its simplicity and purity, sashimi highlights the natural flavors and textures of the freshest ingredients. From delicate slices of tuna and salmon to exotic varieties like sea urchin and octopus, sashimi offers a culinary experience that celebrates the ocean's bounty.",
+      image: assets.sashimi,
+    },
   };
   const cultureData = [
     {
@@ -68,6 +81,7 @@ const About = () => {
 
   return (
     <div>
+      <Cursor />
       <div>
         <img
           className="h-[90vh] w-full object-cover object-bottom relative"
@@ -126,7 +140,7 @@ const About = () => {
             Japanese Cuisine
           </h2>
           <p className="text-xl text-purple-heart-300">
-            {cuisines[selectedCuisine]}
+            {cuisines[selectedCuisine].description}
           </p>
           <div className="flex gap-9 mt-9">
             {Object.keys(cuisines).map((cuisine) => (
@@ -146,8 +160,8 @@ const About = () => {
         </div>
         <img
           className="rounded-xl w-[507px] h-[658px] object-cover"
-          src={assets.cuisine}
-          alt=" Japanese Cuisine"
+          src={assets[selectedCuisine.toLowerCase()]}
+          alt={selectedCuisine}
         />
       </div>
 

@@ -4,7 +4,7 @@ import { Link, NavLink } from "react-router-dom";
 
 function Header() {
   return (
-    <header className="bg-purple-heart-950 text-white px-9 py-4">
+    <header className="bg-purple-heart-950 text-white px-9 py-4 z-10">
       <div className="mx-auto flex items-center justify-between">
         <Link to={"/"}>
           <img src={logo} alt="zenwork logo" />
