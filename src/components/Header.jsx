@@ -23,13 +23,13 @@ function Header() {
           }`}
           onClick={toggleMenu}
         />
-        <IoMdClose
-          className={`block sm:hidden text-3xl cursor-pointer ${
-            menuOpen ? "block" : "hidden"
-          }`}
-          onClick={toggleMenu}
-        />
         <nav className={`hidden sm:block ${menuOpen ? "menuactive" : ""}`}>
+          <IoMdClose
+            className={`block sm:hidden text-3xl cursor-pointer relative top-4 -right-44 mb-6 ${
+              menuOpen ? "block" : "hidden"
+            }`}
+            onClick={toggleMenu}
+          />
           <ul className="flex sm:space-x-6">
             <NavLink
               to={"/jobs"}

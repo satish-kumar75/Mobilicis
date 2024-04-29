@@ -35,19 +35,22 @@ body {
 .menuactive {
     display: block;
     position: absolute;
-    background-color: #350a61;
-    width: 100%;
-    top: 69px;
-    left: 0;
+    background-color: #350a6189;
+    width: 60%;
+    height: calc(100vh - 200px);
+    top: 0;
+    right: 0;
     z-index: 99;
+    backdrop-filter: blur(10px);
 
     ul {
         flex-direction: column;
         align-items: center;
-        gap: 1.5rem;
+        gap: 3rem;
         padding: 2rem;
     }
 }
+
 
 .H-container {
     h1 {
