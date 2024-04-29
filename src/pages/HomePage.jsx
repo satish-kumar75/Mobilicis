@@ -171,7 +171,7 @@ const HeroSection = () => {
         You Deserve
       </h1>
       <p className="para">786 jobs & 110 candidates are registeresd</p>
-      <div className="flex items-center justify-between bg-purple-heart-100 rounded-full mt-8 w-2/6">
+      <div className="flex items-center justify-between bg-purple-heart-100 rounded-full mt-8 sm:w-2/6 transition-all duration-300">
         <label className="flex items-center gap-3 px-3 py-2 flex-grow">
           <FiSearch className="text-purple-800 text-2xl" />
           <input
@@ -190,7 +190,7 @@ const HeroSection = () => {
 
 const CategoryCard = ({ title, image, jobCount }) => {
   return (
-    <div className="px-3 py-4 sm:rounded-lg sm:bg-gradient-to-br sm:from-purple-heart-600 sm:via-purple-heart-950 sm:to-transparent">
+    <div className="px-3 py-4 sm:rounded-lg sm:bg-gradient-to-br sm:from-purple-heart-600 sm:via-purple-heart-950 sm:to-transparent cursor-pointer hover:scale-105 transition duration-300">
       <div className="sm:hidden">
         <div className="flex gap-3 items-center justify-center h-[79px] px-3 rounded-3xl text-xs bg-gradient-to-br from-purple-heart-600 via-purple-heart-950 to-transparent">
           <img className="w-1/6" src={image} alt={title} />

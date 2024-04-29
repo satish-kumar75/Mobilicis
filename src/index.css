@@ -31,6 +31,24 @@ body {
     color: #8739e4;
 }
 
+
+.menuactive {
+    display: block;
+    position: absolute;
+    background-color: #350a61;
+    width: 100%;
+    top: 69px;
+    left: 0;
+    z-index: 99;
+
+    ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        padding: 2rem;
+    }
+}
+
 .H-container {
     h1 {
         font-size: clamp(1.25rem, 10vw, 3.75rem);

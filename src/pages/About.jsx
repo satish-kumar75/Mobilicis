@@ -1,10 +1,35 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { assets } from "../assets/assets";
 import Cursor from "../components/Cursor";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 
 const About = () => {
   const [selectedPlace, setSelectedPlace] = useState("Tokyo");
   const [selectedCuisine, setSelectedCuisine] = useState("Sushi");
+
+  const container = useRef();
+  useGSAP(
+    () => {
+      gsap.from(".heading", {
+        x: -390,
+        duration: 1.4,
+        opacity: 0,
+      });
+      gsap.from(".para", {
+        x: 390,
+        duration: 1.4,
+        opacity: 0,
+      });
+      gsap.from(".place", {
+        y: 390,
+        duration: 1.4,
+        stagger: 0.3,
+        opacity: 0,
+      });
+    },
+    { scope: container }
+  );
 
   const places = ["Tokyo", "Kyoto", "Osaka", "Nara"];
 
@@ -81,18 +106,17 @@ const About = () => {
 
   return (
     <div>
-      <Cursor />
-      <div>
+      <div ref={container}>
         <img
           className="h-[90vh] w-full object-cover object-bottom relative"
           src={assets.japanBackground}
           alt="japan background"
         />
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-          <h1 className=" text-[200px] font-bold font-serif text-purple-heart-200 leading-none">
+          <h1 className="heading text-[200px] font-bold font-serif text-purple-heart-200 leading-none">
             JAPAN
           </h1>
-          <p className="text-3xl text-purple-heart-300 leading-3 text-center uppercase">
+          <p className="para text-3xl text-purple-heart-300 leading-3 text-center uppercase">
             Unveiling the Land of the Rising Sun
           </p>
         </div>
@@ -121,7 +145,7 @@ const About = () => {
             {places.map((place) => (
               <span
                 key={place}
-                className={`text-3xl cursor-pointer ${
+                className={`text-3xl cursor-pointer hover:scale-105 transition duration-300 ease-out ${
                   selectedPlace === place
                     ? "text-purple-heart-700 underline"
                     : ""
@@ -146,7 +170,7 @@ const About = () => {
             {Object.keys(cuisines).map((cuisine) => (
               <span
                 key={cuisine}
-                className={`text-3xl cursor-pointer ${
+                className={`text-3xl cursor-pointer hover:scale-105 transition duration-300 ease-out ${
                   selectedCuisine === cuisine
                     ? "text-purple-heart-700 underline"
                     : ""
@@ -172,7 +196,7 @@ const About = () => {
 
         <div className="culture grid gap-8">
           {cultureData.map((data) => (
-            <div className="bg-gradient-to-br from-purple-heart-800 via-purple-heart-950 to-transparent rounded-xl shadow-md p-6 flex flex-col justify-between">
+            <div className="bg-gradient-to-br from-purple-heart-800 via-purple-heart-950 to-transparent rounded-xl shadow-md p-6 flex flex-col justify-between hover:scale-105 transition duration-300 ease-out">
               <div>
                 <h2 className="text-2xl text-center font-semibold text-purple-heart-300 mb-4">
                   {data.title}
@@ -196,8 +220,20 @@ const About = () => {
 };
 
 const Place = ({ place, image, title, selected, handleClick }) => {
+  const container = useRef();
+  useGSAP(
+    () => {
+      gsap.from(".place", {
+        y: 390,
+        duration: 1.4,
+        stagger: 0.3,
+        opacity: 0,
+      });
+    },
+    { scope: container }
+  );
   return (
-    <div className="flex items-center gap-4">
+    <div ref={container} className="place flex items-center gap-4">
       <img src={image} alt={place} />
       <div>
         <p className="tracking-tighter text-purple-heart-200 font-semibold">
