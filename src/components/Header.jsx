@@ -25,7 +25,7 @@ function Header() {
         />
         <nav className={`hidden sm:block ${menuOpen ? "menuactive" : ""}`}>
           <IoMdClose
-            className={`block sm:hidden text-3xl cursor-pointer relative top-4 -right-44 mb-6 ${
+            className={`block sm:hidden text-3xl cursor-pointer relative top-5 -right-48 mb-6 ${
               menuOpen ? "block" : "hidden"
             }`}
             onClick={toggleMenu}

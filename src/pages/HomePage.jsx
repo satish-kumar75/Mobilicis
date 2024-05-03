@@ -167,7 +167,7 @@ const HeroSection = () => {
       className="H-container flex justify-center flex-col items-center pt-7 pb-9"
     >
       <h1 className="heading leading-snug text-center mb-5 font-semibold">
-        Get the <span className="text-purple-heart-800">Right Job</span> <br />
+        Get the <span>Right Job</span> <br />
         You Deserve
       </h1>
       <p className="para">786 jobs & 110 candidates are registeresd</p>
@@ -190,7 +190,7 @@ const HeroSection = () => {
 
 const CategoryCard = ({ title, image, jobCount }) => {
   return (
-    <div className="px-3 py-4 sm:rounded-lg sm:bg-gradient-to-br sm:from-purple-heart-600 sm:via-purple-heart-950 sm:to-transparent cursor-pointer hover:scale-105 transition duration-300">
+    <div className="px-3 py-4 sm:rounded-lg sm:bg-purple-heart-800/15 sm:border-2 sm:border-purple-heart-700 cursor-pointer hover:scale-105 transition duration-300">
       <div className="sm:hidden">
         <div className="flex gap-3 items-center justify-center h-[79px] px-3 rounded-3xl text-xs bg-gradient-to-br from-purple-heart-600 via-purple-heart-950 to-transparent">
           <img className="w-1/6" src={image} alt={title} />
@@ -215,7 +215,9 @@ const JobCategory = () => {
     <div className="job-container bg-haiti-950 py-7 px-3">
       <h2 className="text-center">
         One Platform <br /> Many{" "}
-        <span className="text-purple-heart-800 font-medium">Solutions</span>
+        <span className="bg-gradient-to-r text-transparent bg-clip-text from-purple-heart-700 via-purple-heart-500 to-purple-heart-200 font-medium">
+          Solutions
+        </span>
       </h2>
       <div className="container transition-all sm:gap-8 sm:px-5 py-6">
         {categories.map((category, index) => (
@@ -235,12 +237,14 @@ const Jobs = () => {
           <JobCard key={index} {...jobData} />
         ))}
       </div>
-      <Link
-        to={"/jobs"}
-        className="bg-purple-heart-600 text-purple-heart-100 hover:bg-purple-heart-700 px-5 py-2 rounded-lg transition duration-300 relative left-1/2 transform -translate-x-1/2 "
-      >
-        Find More Jobs
-      </Link>
+      <div className="flex items-center justify-center w-full">
+        <Link
+          to={"/jobs"}
+          className="bg-purple-heart-600 text-purple-heart-100 hover:bg-purple-heart-700 px-5 py-2 rounded-lg transition duration-300"
+        >
+          Find More Jobs
+        </Link>
+      </div>
     </div>
   );
 };

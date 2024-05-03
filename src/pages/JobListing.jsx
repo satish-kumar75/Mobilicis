@@ -173,7 +173,7 @@ export const JobCard = ({
   description,
 }) => {
   return (
-    <div className="job-card sm:p-5 p-2 rounded-3xl bg-gradient-to-br from-purple-heart-600 via-purple-heart-950 to-transparent hover:scale-105 transition duration-300">
+    <div className="job-card sm:p-5 p-2 rounded-3xl bg-purple-heart-800/15 border-2 border-purple-heart-700 hover:scale-105 transition duration-300">
       <div className="flex items-center sm:gap-4 gap-2">
         <img src={image} alt={title} />
         <div className="company-details">

@@ -37,7 +37,7 @@ body {
     position: absolute;
     background-color: #350a6189;
     width: 60%;
-    height: calc(100vh - 200px);
+    height: 100vh;
     top: 0;
     right: 0;
     z-index: 99;
@@ -55,6 +55,12 @@ body {
 .H-container {
     h1 {
         font-size: clamp(1.25rem, 10vw, 3.75rem);
+
+        span {
+            background: linear-gradient(to right, #7228c8, #9d5bf1, #e6d6fe);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
     }
 
     p {
@@ -119,6 +125,9 @@ body {
     @apply mt-4 bg-purple-heart-600 text-purple-heart-100 rounded-md hover:bg-purple-heart-700 py-2 px-4 transition duration-300 self-center;
 }
 
+.contact {
+    font-size: clamp(2rem, 8vw, 5rem);
+}
 
 
 @media screen and (min-width: 640px) {

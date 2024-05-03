@@ -4,11 +4,11 @@ import { BiMap, BiEnvelope, BiPhone } from "react-icons/bi";
 const ContactUs = () => {
   return (
     <div className="mx-auto px-6 py-8">
-      <h1 className="text-6xl sm:text-8xl text-center uppercase font-semibold text-purple-heart-950 mb-8">
+      <h1 className="contact text-center uppercase font-semibold text-purple-heart-950 mb-8">
         Contact Us
       </h1>
       <div className="flex flex-col md:flex-row justify-center gap-12">
-        <div className="bg-gradient-to-br from-purple-heart-800 via-purple-heart-950 to-transparent rounded-xl shadow-md p-6 w-full md:w-96">
+        <div className="bg-purple-heart-800/15 border-b-2 border-s-2 border-purple-heart-700 rounded-xl shadow-md p-6 w-full md:w-96">
           <h2 className="text-2xl font-semibold text-purple-heart-300 mb-4">
             Contact Form
           </h2>
@@ -34,7 +34,7 @@ const ContactUs = () => {
           </form>
         </div>
 
-        <div className="bg-gradient-to-br from-purple-heart-800 via-purple-heart-950 to-transparent rounded-xl shadow-md p-6 w-full md:w-96">
+        <div className="bg-purple-heart-800/15 border-b-2 border-s-2 border-purple-800 rounded-xl shadow-md p-6 w-full md:w-96">
           <h2 className="text-2xl font-semibold text-purple-heart-300 mb-4">
             Contact Information
           </h2>

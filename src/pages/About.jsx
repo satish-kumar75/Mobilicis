@@ -22,7 +22,7 @@ const About = () => {
         opacity: 0,
       });
       gsap.from(".place", {
-        y: 390,
+        y: 90,
         duration: 1.4,
         stagger: 0.3,
         opacity: 0,
@@ -121,7 +121,7 @@ const About = () => {
           </p>
         </div>
 
-        <div className="flex justify-between items-center px-9 absolute bottom-0 w-full">
+        <div className="flex justify-between items-center px-9 absolute bottom-0 w-full overflow-hidden">
           {places.map((place) => (
             <Place
               key={place}
@@ -133,7 +133,7 @@ const About = () => {
         </div>
       </div>
       <div className="flex items-center px-9 py-6 gap-10">
-        <img className="rounded-xl" src={assets.japan} alt="Japan" />
+        <img className="rounded-xl border-2 border-purple-heart-700" src={assets.japan} alt="Japan" />
         <div>
           <h2 className="text-7xl mb-7 text-purple-heart-950 uppercase font-semibold tracking-wide">
             Tales of Japan
@@ -183,7 +183,7 @@ const About = () => {
           </div>
         </div>
         <img
-          className="rounded-xl w-[507px] h-[658px] object-cover"
+          className="rounded-xl w-[507px] h-[658px] object-cover border-2 border-purple-heart-700"
           src={assets[selectedCuisine.toLowerCase()]}
           alt={selectedCuisine}
         />
@@ -196,7 +196,7 @@ const About = () => {
 
         <div className="culture grid gap-8">
           {cultureData.map((data) => (
-            <div className="bg-gradient-to-br from-purple-heart-800 via-purple-heart-950 to-transparent rounded-xl shadow-md p-6 flex flex-col justify-between hover:scale-105 transition duration-300 ease-out">
+            <div className="bg-purple-heart-800/15 border border-purple-heart-700 hover:border-2 rounded-xl shadow-md p-6 flex flex-col justify-between hover:scale-105 transition duration-300 ease-out">
               <div>
                 <h2 className="text-2xl text-center font-semibold text-purple-heart-300 mb-4">
                   {data.title}
